@@ -52,6 +52,7 @@ class AddBook extends Component {
           <input
             type="text"
             onChange={(e) => this.setState({ name: e.target.value })}
+            required
           />
         </div>
         <div className="field">
@@ -59,12 +60,16 @@ class AddBook extends Component {
           <input
             type="text"
             onChange={(e) => this.setState({ genre: e.target.value })}
+            required
           />
         </div>
         <div className="field">
           <label>Author:</label>
-          <select onChange={(e) => this.setState({ authorId: e.target.value })}>
-            <option>Select author</option>
+          <select
+            value={this.state.authorId}
+            onChange={(e) => this.setState({ authorId: e.target.value })}
+          >
+            {/* <option>Select author</option> */}
             {this.displayAuthors()}
           </select>
         </div>
